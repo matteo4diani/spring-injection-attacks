@@ -1,0 +1,35 @@
+<div th:replace="header"></div>
+
+<div class="container float-left">
+    <div th:if="${user != null}">
+        <h4>User Info</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">username</th>
+                <th scope="col">password</th>
+                <th scope="col">name</th>
+                <th scope="col">surname</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row" th:text="${user.id}"></th>
+                <td th:text="${user.username}"></td>
+                <td th:text="${user.password}"></td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.surname}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mt-5" th:if="${error != null}">
+        <ul>
+            <li th:text="'Error: ' + ${error}"></li>
+        </ul>
+    </div>
+</div>
+
+
+<div th:replace="footer"></div>

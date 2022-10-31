@@ -1,0 +1,27 @@
+<div th:replace="header"></div>
+
+<div class="mt-5 container border border-info" style="border-width:5px !important;">
+    <div class="mt-5">
+        <h2> <p class="text-center float-center">Login to System</p></h2>
+    </div>
+    <div class="mx-auto mt-5">
+        <form class="col-12" action="#" th:action="@{/login}" th:object="${loginRequestModel}" method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" th:field="*{username}" id="username" placeholder="Enter username">
+                <input class="form-control" type="password" th:field="*{password}" id="password" placeholder="Enter password">
+                <div class="text-center mt-5">
+                    <input class="btn btn-primary" type="submit" value="Login">
+                </div>
+                <div class="mt-5" th:if="${error != null}">
+                    <p class="text-center alert alert-danger">Invalid username or password!</p>
+                    <ul>
+                        <li th:text="'Error: ' + ${error}"></li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div th:replace="footer"></div>
