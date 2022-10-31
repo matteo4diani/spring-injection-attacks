@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS injection;
+
 DROP TABLE IF EXISTS injection.users CASCADE;
 
 CREATE TABLE injection.users
